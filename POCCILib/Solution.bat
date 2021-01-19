@@ -1,0 +1,1 @@
+"C:\Projects\BlueIndigo\Projects\BlueIndigoBase\BlueIndigoBase\App_Data\Projects\POCContinuousIntegration\POCCILib\POCCILib.sln"
