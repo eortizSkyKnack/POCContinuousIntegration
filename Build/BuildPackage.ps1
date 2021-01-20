@@ -1,11 +1,11 @@
-﻿$buildToolPath = "..\..\..\Bin\PX.CommandLine.exe"
+﻿$buildToolPath = "..\..\..\..\Bin\PX.CommandLine.exe"
 $vswherePath = ".\vswhere.exe"
-$webSitePath = "..\..\..\"
+$webSitePath = "..\..\..\..\"
 $outPackagePath = ".\POCCI.zip"
-$binSourceFolder = "..\POCCILib\POCCILib\bin\Release\*"
+$binSourceFolder = "..\Builds\Temp\POCCILib\bin\Debug\*"
 $projectSourceFolder = "..\POCCILib\*"
-$tmpFolder = ".\Temp"
-$tmpBinFolder = ".\Temp\Bin"
+$tmpFolder = "..\Builds\Temp"
+$tmpBinFolder = "..\Builds\Temp\Bin"
 $solutionPath = "..\POCCILib\POCCILib.sln"
 
 $MSBuildPath = & $vswherePath -latest -products * -requires Microsoft.Component.MSBuild -property installationPath
@@ -45,7 +45,7 @@ if (!(Test-Path $tmpBinFolder))
 {
     md $tmpBinFolder >$null 2>&1
 }
-
+echo "Coing files"
 Copy-Item -Path $binSourceFolder -Recurse -Destination $tmpBinFolder
 
 & $buildToolPath /method BuildProject /website $webSitePath /in $tmpFolder /out $outPackagePath /description "Test"
