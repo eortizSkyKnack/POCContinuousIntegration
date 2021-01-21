@@ -1,10 +1,12 @@
-﻿$buildToolPath = "..\..\..\..\Bin\PX.CommandLine.exe"
+﻿#$buildToolPath = "C:\Projects\BlueIndigoBase\Customization\BlueIndigoBase\BlueIndigoBaseValidation\BlueIndigoBaseWebsite\Bin\PX.CommandLine.exe"
+$buildToolPath = "..\..\..\..\Bin\PX.CommandLine.exe"
 $vswherePath = ".\vswhere.exe"
 $webSitePath = "C:\Projects\BlueIndigoBase\BlueIndigoBase"
-$outPackagePath = "..\Builds\POCCI.zip"
+#$webSitePath = "C:\Projects\BlueIndigoBase\Customization\BlueIndigoBase\BlueIndigoBaseValidation\BlueIndigoBaseWebsite\"
+$outPackagePath = "..\Builds\POCCIBuild.zip"
 $binSourceFolder = "..\Builds\Temp\POCCILib\bin\Release\*"
 $projectSourceFolder = "..\POCCILib\*"
-$tmpFolder = "..\Builds\Temp"
+$tmpFolder = "..\Builds\Temp\"
 $tmpBinFolder = "..\Builds\Temp\Bin"
 $solutionPath = "..\POCCILib\POCCILib.sln"
 $solutionPath2 = "..\POCCILib\POCCILib\POCCILib.csproj"
@@ -52,6 +54,9 @@ echo   "$buildToolPath /method BuildProject /website $webSitePath /in $tmpFolder
 & $buildToolPath /method BuildProject /website $webSitePath /in $tmpFolder /out $outPackagePath /description "Test"
 
 
+#echo   "$buildToolPath /method BuildProject /in $tmpFolder /out $outPackagePath /description Test"
+#
+#& $buildToolPath /method BuildProject  /in $tmpFolder /out $outPackagePath /description "Test"
 
 
 
