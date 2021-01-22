@@ -1,15 +1,12 @@
-﻿#$buildToolPath = "C:\Projects\BlueIndigoBase\Customization\BlueIndigoBase\BlueIndigoBaseValidation\BlueIndigoBaseWebsite\Bin\PX.CommandLine.exe"
-$buildToolPath = "..\..\..\..\Bin\PX.CommandLine.exe"
+﻿$buildToolPath = "C:\Projects\BlueIndigoBase\BlueIndigoBase\Bin\PX.CommandLine.exe"
 $vswherePath = ".\vswhere.exe"
 $webSitePath = "C:\Projects\BlueIndigoBase\BlueIndigoBase"
-#$webSitePath = "C:\Projects\BlueIndigoBase\Customization\BlueIndigoBase\BlueIndigoBaseValidation\BlueIndigoBaseWebsite\"
 $outPackagePath = "..\Builds\POCCIBuild.zip"
-$binSourceFolder = "..\POCCILib\POCCILib\obj\Release\*"
+$binSourceFolder = "..\POCCILib\POCCILib\bin\Release\POCCILib.*"
 $projectSourceFolder = "..\POCCI\*"
 $tmpFolder = "..\Builds\Temp\"
 $tmpBinFolder = "..\Builds\Temp\Bin"
-$solutionPath = "..\POCCILib\POCCILib.sln"
-$solutionPath2 = "..\POCCILib\POCCILib\POCCILib.csproj"
+$solutionPath = "..\POCCILib\POCCILib\POCCILib.csproj"
 
 $MSBuildPath = & $vswherePath -latest -products * -requires Microsoft.Component.MSBuild -property installationPath
 if ($MSBuildPath) {
@@ -27,8 +24,9 @@ else
     Write-Host "Failed to find MSBuild"
 }
 
-set MSBuildEmitSolution=1
-& $MSBuildPath $solutionPath2  /p:Configuration=Release /p:Platform="AnyCPU" /verbosity:minimal 
+#set MSBuildEmitSolution=1
+echo "$MSBuildPath $solutionPath  /p:Configuration=Release /p:Platform='AnyCPU' /verbosity:minimal"
+& $MSBuildPath $solutionPath  /p:Configuration=Release /p:Platform="AnyCPU" /verbosity:minimal  /t:Rebuild
 
 echo "MSBuild going to be called"
 
