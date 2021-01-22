@@ -50,7 +50,7 @@ Copy-Item -Path $binSourceFolder -Recurse -Destination $tmpBinFolder
 echo "PX.CommandLine.Exe going to be called"
 #echo   "$buildToolPath /method BuildProject /website $webSitePath /in $tmpFolder /out $outPackagePath /description Test"
 
-& $buildToolPath /method BuildProject /website $webSitePath /in $tmpFolder /out $outPackagePath /description "Test"
+& $buildToolPath /method BuildProject /website $webSitePath /in $tmpFolder /out $outPackagePath /description "Test my different description"
 
 
 

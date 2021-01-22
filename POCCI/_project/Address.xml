@@ -1,3 +1,4 @@
 ﻿<Table TableName="Address">
     <Column TableName="Address" ColumnName="UsrCustomAddresssField" ColumnType="string" AllowNull="True" MaxLength="30" DecimalPrecision="2" DecimalLength="30" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="Address" ColumnName="UsrTest" ColumnType="string" AllowNull="True" MaxLength="4000" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
 </Table>
