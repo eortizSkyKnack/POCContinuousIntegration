@@ -1,0 +1,7 @@
+﻿<Sql TableName="testscript" CustomScript="#CDATA">
+    <CDATA name="CustomScript"><![CDATA[create table table_name
+(
+	column_1 int
+)
+go]]></CDATA>
+</Sql>
